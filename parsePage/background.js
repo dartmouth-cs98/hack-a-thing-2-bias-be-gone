@@ -3,6 +3,7 @@
  *
  * @param {integer} tabId - ID of tab.
  * @param {function} callback - Called with the tab's source upon completion.
+ * mostly from https://stackoverflow.com/questions/11684454/getting-the-source-html-of-the-current-page-from-chrome-extension
  */
 function getSourceFromTab(tabId, callback) {
     // Capture the page when it has fully loaded.
@@ -32,3 +33,9 @@ function getSourceFromTab(tabId, callback) {
         callback(''); // Tab closed, no response.
     }
 }
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.highlight === true) {
+    sendResponse({messageStatus: "received"});
+  }
+});
