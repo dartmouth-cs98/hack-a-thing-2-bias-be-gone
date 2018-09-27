@@ -2,7 +2,6 @@
 // Demo: var serialized_html = DOMtoString(document);
 
 function DOMtoString(document_root) {
-    console.log('DOMtoString');
     var html = '',
         node = document_root.firstChild;
     while (node) {

@@ -1,3 +1,7 @@
+/**
+Much of this came from https://stackoverflow.com/questions/11684454/getting-the-source-html-of-the-current-page-from-chrome-extension
+*/
+
 chrome.runtime.onMessage.addListener(function(request, sender) {
   if (request.action == "getSource") {
     message.innerText = request.source;
